@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To-Do List</title>
-    <link href="" rel=""> <!-- hier folgt die css Einbindung -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Liste</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-    <h1>My To-Do List</h1>
-    <button>Add To-Do</button>
-    <button>Delete To-Do</button>
-    <button>Save</button>
-
-    <script src=""></script> <!-- hier folgt die js Einbindung -->
-
+<body class="bg-gray-100">
+<div class="container mx-auto p-4">
+    <div class="bg-white p-6 rounded shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Meine ToDo Liste</h1>
+        <div class="flex mb-4">
+            <input id="newTodo" type="text" class="border rounded w-full py-2 px-3 mr-4" placeholder="Neues ToDo">
+            <button id="addTodo" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Hinzufügen</button>
+        </div>
+        <ul id="todoList" class="list-none p-0"></ul>
+    </div>
+    <button id="deleteSelected" class="mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded">Ausgewählte löschen</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
