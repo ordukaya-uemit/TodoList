@@ -1,0 +1,49 @@
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
+
+body {
+    @apply bg-gray-100;
+}
+
+.container {
+    @apply mx-auto p-4;
+}
+
+.bg-white {
+    @apply bg-white p-6 rounded shadow-md;
+}
+
+h1 {
+    @apply text-2xl font-bold mb-4;
+}
+
+.flex {
+    @apply flex mb-4;
+}
+
+input {
+    @apply border rounded w-full py-2 px-3 mr-4;
+}
+
+button {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+button:hover {
+    @apply bg-blue-700;
+}
+
+ul {
+    @apply list-none p-0;
+}
+
+li {
+    @apply p-2 my-2 bg-gray-200 rounded flex justify-between items-center;
+}
+
+li span {
+    @apply flex-1 ml-4 text-lg font-semibold;
+}
+
+.mt-4 {
+    @apply mt-4;
+}
