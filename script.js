@@ -25,11 +25,27 @@ document.addEventListener('DOMContentLoaded', () => {
             checkbox.className = 'mr-2';
             const span = document.createElement('span');
             span.textContent = todo.text;
+            if (todo.completed) {
+                span.classList.add('strikethrough');
+            }
             li.appendChild(checkbox);
             li.appendChild(span);
+
+            const trashIcon = document.createElement('span');
+            trashIcon.innerHTML = '&#x1F5D1;';
+            trashIcon.className = 'trash-icon';
+            trashIcon.addEventListener('click', () => {
+                li.remove();
+                saveTodos();
+            });
+            li.appendChild(trashIcon);
+
             todoList.appendChild(li);
 
-            checkbox.addEventListener('change', saveTodos);
+            checkbox.addEventListener('change', () => {
+                span.classList.toggle('strikethrough');
+                saveTodos();
+            });
         });
     }
 
@@ -44,9 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         span.textContent = newTodoInput.value;
         li.appendChild(checkbox);
         li.appendChild(span);
+
+        const trashIcon = document.createElement('span');
+        trashIcon.innerHTML = '&#x1F5D1;';
+        trashIcon.className = 'trash-icon';
+        trashIcon.addEventListener('click', () => {
+            li.remove();
+            saveTodos();
+        });
+        li.appendChild(trashIcon);
+
         todoList.appendChild(li);
 
-        checkbox.addEventListener('change', saveTodos);
+        checkbox.addEventListener('change', () => {
+            span.classList.toggle('strikethrough');
+            saveTodos();
+        });
 
         newTodoInput.value = '';
         saveTodos();
@@ -63,4 +92,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadTodos();
 });
-
